@@ -1,0 +1,8 @@
+{
+  "name": "typescript-tutorial",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Hossein-Haghshenas/TypeScript-Tutorial.git",
+  "author": "Hossein <77438070+Hossein-Haghshenas@users.noreply.github.com>",
+  "license": "MIT"
+}
