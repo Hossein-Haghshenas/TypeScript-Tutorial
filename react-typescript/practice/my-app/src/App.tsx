@@ -10,6 +10,7 @@ import Button from "./components/EventProps/Button";
 import Input from "./components/EventProps/Input";
 import Container from "./components/StyleProps/Container";
 import LoggedIn from "./components/state/LoggedIn";
+import User from "./components/state/User";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
         }}
       />
       <LoggedIn />
+      <User />
     </div>
   );
 }
