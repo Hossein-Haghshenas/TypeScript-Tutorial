@@ -1,3 +1,4 @@
+import { nanoid } from "nanoid";
 type propType = { favoriteFood: string[] };
 
 function ArrayProps({ favoriteFood }: propType) {
@@ -6,7 +7,7 @@ function ArrayProps({ favoriteFood }: propType) {
       <p>my favorite foods are : </p>
       <ul>
         {favoriteFood.map((food) => (
-          <li>{food}</li>
+          <li key={nanoid()}>{food}</li>
         ))}
       </ul>
     </div>
