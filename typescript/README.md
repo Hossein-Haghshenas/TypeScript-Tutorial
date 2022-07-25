@@ -260,3 +260,66 @@ TypeScript supports the concept of Inheritance. Inheritance is the ability of a 
 class ITDepartment extends Department {
 }
 ```
+
+### `Generic types `
+
+TypeScript Generics is a tool which provides a way to create reusable components. It creates a component that can work with a variety of data types rather than a single data type. It allows users to consume these components and use their own types.
+
+```Ts
+const names: Array<string> = []; // string[]
+
+const names: Array<any> = []; // string[]
+
+const promise: Promise<any> = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('This is done!');
+  }, 2000);
+});
+
+promise.then(data => {
+  data.split(' ');
+})
+```
+
+#### `Type castings`
+
+Type castings allow you to convert a variable from one type to another. In TypeScript, you can use the as keyword or <> operator for type castings
+
+```Ts
+function merge (objA: object , objB: object) {
+  return Object.assign(objA, objB);
+}
+const mergeObj = merge({ name: 'Max'}, { age: 30 }) as {name: string, age: number};
+```
+
+#### `generic function`
+
+```Ts
+function merge <T, U> (objA: T , objB: U) {
+  return Object.assign(objA, objB);
+}
+
+const mergeObj = merge({ name: 'Max'}, { age: 30 });
+```
+
+#### `constrained`
+
+TypeScript allows you to declare a type parameter constrained by another type parameter. The following prop() function accepts an object and a property name. It returns the value of the property.
+
+```Ts
+function merge<T extends object, U extends object>(objA: T, objB: U) {
+  return Object.assign(objA, objB);
+}
+```
+
+more example :
+
+```Ts
+function extractAndConvert<T extends object, U extends keyof T>(
+  obj: T,
+  key: U
+) {
+  return 'Value: ' + obj[key];
+}
+extractAndConvert({ name: 'Max' }, 'name');
+```
